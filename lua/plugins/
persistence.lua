@@ -14,6 +14,11 @@ return {
         "folds",
       },
     },
+
+    filter = function(buf)
+      local filename = vim.api.nvim_buf_get_name(buf)
+      return not string.match(filename, "%.bashrc$")
+    end,
     -- Optional: custom keymappings for session management
     keys = {
       {

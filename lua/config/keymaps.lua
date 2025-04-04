@@ -37,8 +37,11 @@ vim.keymap.set("n", "<S-Left>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move bu
 vim.keymap.set("n", "<S-Right>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
 
 -- Buffer navigation with Tab and Shift-Tab
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer", silent = true })
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer", silent = true })
+-- vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer", silent = true })
+-- vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer", silent = true })
+vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer", silent = true })
+vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer", silent = true })
+
 -- vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close current buffer", silent = true })
 --vim.keymap.set("n", "<C-w>", ":bp|bd #<CR>", { desc = "Close current buffer and move to previous", silent = true })
 vim.keymap.set("n", "<C-w>", function()
@@ -59,3 +62,7 @@ vim.keymap.set("n", "<C-w>", function()
     vim.cmd("bd")
   end
 end, { desc = "Close current buffer and move to another file", silent = true })
+
+------
+vim.keymap.set("x", "p", "pgvy", { desc = "Paste without losing buffer" })
+vim.keymap.set("v", "p", '"_dP', { desc = "Paste without losing buffer" })
