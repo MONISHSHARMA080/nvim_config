@@ -13,13 +13,6 @@ ls.add_snippets("typescript", {
 
 ls.add_snippets("go", {
   s("iferr", {
-    t("if err != nil {", ""),
-    i(1),
-    t("}"),
-  }),
-})
-ls.add_snippets("go", {
-  s("ife", {
     t({ "if err != nil {", '\tprintln("' }),
     i(1), -- Cursor will be positioned here inside the quotes
     t({ '")', "\treturn err", "}" }),
