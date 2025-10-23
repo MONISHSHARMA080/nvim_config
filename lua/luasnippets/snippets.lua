@@ -27,3 +27,30 @@ ls.add_snippets("typescript", {
     t({ " error is ->`,error);", "}" }),
   }),
 })
+
+ls.add_snippets("python", {
+  s("print", {
+
+    t("print(F' "),
+    i(1),
+    t(" ')"),
+  }),
+})
+
+ls.add_snippets("python", {
+  s("assert(type hint)", {
+
+    t("assert isinstance("),
+    i(1),
+    t(") , F'expected  to be of type but got {type()} '"),
+  }),
+})
+
+ls.add_snippets("python", {
+  s("assert", {
+
+    t("assert "),
+    i(1),
+    t(" , F' '"),
+  }),
+})
